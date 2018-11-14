@@ -1,0 +1,14 @@
+<div class="container">
+  <h4>Edit a Restaurant</h4>
+  <div *ngIf="errors">
+    <p class="errors" *ngFor="let error of errors">{{ error.message }}</p>
+  </div>
+  <form (submit)="editRestaurant()">
+    <label for="updateRestaurant.name" class="control-label">Restaurant Name:</label>
+    <input type="text" class="form-control" name="updateRestaurant.name" [(ngModel)]="updateRestaurant.name">
+    <label for="updateRestaurant.cuisine" class="control-label">Cuisine Type:</label>
+    <input type="text" class="form-control" name="updateRestaurant.cuisine" [(ngModel)]="updateRestaurant.cuisine">
+    <button type="submit" class="btn btn-success">Edit</button>
+    <button class="btn btn-secondary">Cancel</button>
+  </form>
+</div>

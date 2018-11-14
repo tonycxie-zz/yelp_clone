@@ -1,0 +1,28 @@
+<div class="container">
+  <h4>Reviews for {{ restaurant.name }}</h4>
+  <button class="btn btn-primary" [routerLink]="['review']">New Review</button>
+  <div class="reviews-table">
+    <div class="row">
+      <div class="col col-display">
+        <p>Customer</p>
+      </div>
+      <div class="col col-display">
+        <p>Stars</p>
+      </div>
+      <div class="col col-display">
+        <p>Description</p>
+      </div>
+    </div>
+    <div class="row" *ngFor="let review of reviews">
+      <div class="col col-display">
+        <p>{{ review.reviewer }}</p>
+      </div>
+      <div class="col col-display">
+        <p>{{ review.stars }} Stars</p>
+      </div>
+      <div class="col col-display">
+        <p>{{ review.desc }}</p>
+      </div>
+    </div>
+  </div>
+</div>

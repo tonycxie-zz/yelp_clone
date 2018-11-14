@@ -1,0 +1,12 @@
+<h4>Register a Restaurant</h4>
+<div *ngIf="errors">
+  <p class="errors" *ngFor="let error of errors">{{ error.message }}</p>
+</div>
+<form (submit)="addRestaurant()">
+  <label for="newRestaurant.name" class="control-label">Restaurant Name:</label>
+  <input type="text" class="form-control" name="newRestaurant.name" [(ngModel)]="newRestaurant.name">
+  <label for="newRestaurant.cuisine" class="control-label">Cuisine Type:</label>
+  <input type="text" class="form-control" name="newRestaurant.cuisine" [(ngModel)]="newRestaurant.cuisine">
+  <button type="submit" class="btn btn-success">Create</button>
+  <button class="btn btn-secondary" [routerLink]="['/restaurants']">Cancel</button>
+</form>

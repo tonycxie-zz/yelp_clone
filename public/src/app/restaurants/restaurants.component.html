@@ -1,0 +1,30 @@
+<div class="container">
+  <button class="btn btn-primary" [routerLink]="['new']">New Restaurant</button>  
+  <div class="restaurants-table">
+    <div class="row">
+      <div class="col col-display">
+        <p>Restaurant</p>
+      </div>
+      <div class="col col-display">
+        <p>Cuisine</p>
+      </div>
+      <div class="col col-display">
+        <p>Actions</p>
+      </div>
+    </div>
+    <div class="row" *ngFor="let restaurant of restaurants">
+      <div class="col col-display">
+        <p>{{ restaurant.name }}</p>
+      </div>
+      <div class="col col-display">
+        <p>{{ restaurant.cuisine}}</p>
+      </div>
+      <div class="col col-display">
+        <button class="btn btn-primary" [routerLink]="[restaurant._id]">Read Reviews</button>
+        <button class="btn btn-secondary" (click)=editRestaurant(restaurant)>Update</button>
+        <button class="btn btn-danger" (click)="deleteRestaurant(restaurant._id)" [disabled]="oldEnough(restaurant)">Delete</button>
+      </div>
+    </div>
+  </div>
+  <app-edit *ngIf="showForm" [(editForm)]="showForm" [restaurantToShow]="showRestaurant"></app-edit>
+</div>

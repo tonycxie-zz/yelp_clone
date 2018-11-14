@@ -1,0 +1,25 @@
+.restaurants-table {
+    margin-bottom: 20px;
+}
+
+.restaurants-table .row {
+    border-left: 2px solid black;
+}
+
+.row .col-display {
+    border-right: 2px solid black;
+    padding: 5px;
+}
+
+.row:first-child {
+    background-color: #cccccc;
+    border-top: 2px solid black;
+}
+
+.row:nth-child(even) {
+    background-color: #eeeeee;
+}
+
+.row:last-child {
+    border-bottom: 2px solid black;
+}
